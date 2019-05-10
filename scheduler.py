@@ -45,7 +45,7 @@ class Scheduler:
                 index += 1
             if not found:
                 logger.info(f"worker with salt was not found in worker list")
-                raise "salt not found"
+                raise Exception("salt not found")
 
             if self._remove_workers > 0:
                 logger.info("removing worker")
