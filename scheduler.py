@@ -32,8 +32,8 @@ class Scheduler:
         #    self._lock.release()
 
     def get_work(self, salt):
-        self._lock.acquire()
-        try:
+        #self._lock.acquire()
+        #try:
             #check if worker is registered
             #TODO refactor
             found = False
@@ -64,8 +64,8 @@ class Scheduler:
                 logger.info(f"got task with id {task_id} and delay {delay}")
                 self.set_work_status(task_id, "EXECUTING")
                 return task_id, delay
-        finally:
-            self._lock.release()
+        #finally:
+        #    self._lock.release()
 
     def add_worker(self):
         logger.info("will add worker")

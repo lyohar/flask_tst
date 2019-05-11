@@ -90,5 +90,5 @@ def get_workers():
 
 if __name__ == '__main__':
     sched = scheduler.Scheduler()
-    WSGIServer(('', 5000), app).serve_forever()
+    WSGIServer(('', 5000), app, log=None).serve_forever()
     #app.run(host = 'localhost', port=5000)
